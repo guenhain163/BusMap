@@ -1,0 +1,5 @@
+/home/mg/Desktop/CAdv/build/CMakeFiles/edit_cache.dir
+/home/mg/Desktop/CAdv/build/CMakeFiles/package_source.dir
+/home/mg/Desktop/CAdv/build/CMakeFiles/rebuild_cache.dir
+/home/mg/Desktop/CAdv/build/CMakeFiles/package.dir
+/home/mg/Desktop/CAdv/build/CMakeFiles/TuDien.dir
