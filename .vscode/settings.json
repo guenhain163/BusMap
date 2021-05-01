@@ -3,5 +3,8 @@
         "stdlib.h": "c",
         "gtk.h": "c"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "cSpell.words": [
+        "Nuoc"
+    ]
 }

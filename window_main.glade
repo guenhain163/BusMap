@@ -20,9 +20,35 @@
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
+          <placeholder/>
+        </child>
+        <child>
           <object class="GtkFixed" id="fixed1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <child>
+              <object class="GtkButton" id="buttonMenu">
+                <property name="width_request">60</property>
+                <property name="height_request">60</property>
+                <property name="visible">True</property>
+                <property name="app_paintable">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_buttonMenu_clicked" object="sw_page" swapped="no"/>
+                <child>
+                  <object class="GtkImage">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="stock">gtk-justify-fill</property>
+                    <property name="icon_size">5</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="x">480</property>
+              </packing>
+            </child>
             <child>
               <object class="GtkToggleButton" id="togglebuttonState">
                 <property name="width_request">60</property>
@@ -33,7 +59,7 @@
                 <property name="focus_on_click">False</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <signal name="toggled" handler="on_togglebuttonState_toggled" object="sw_page" swapped="no"/>
+                <signal name="toggled" handler="on_togglebuttonState_toggled" object="menuBar" swapped="no"/>
                 <child>
                   <object class="GtkImage">
                     <property name="visible">True</property>
@@ -44,11 +70,29 @@
                 </child>
               </object>
             </child>
+            <child>
+              <object class="GtkSearchEntry">
+                <property name="width_request">410</property>
+                <property name="height_request">40</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_top">10</property>
+                <property name="margin_bottom">10</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <property name="primary_icon_activatable">False</property>
+                <property name="secondary_icon_activatable">False</property>
+                <property name="primary_icon_sensitive">False</property>
+                <property name="secondary_icon_sensitive">False</property>
+              </object>
+              <packing>
+                <property name="x">65</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">False</property>
-            <property name="position">0</property>
+            <property name="position">1</property>
           </packing>
         </child>
         <child>
@@ -57,44 +101,48 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkStackSwitcher" id="sw_page">
-                <property name="width_request">360</property>
-                <property name="height_request">1090</property>
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="events">GDK_STRUCTURE_MASK | GDK_PROPERTY_CHANGE_MASK</property>
-                <property name="hexpand">False</property>
-                <property name="vexpand">False</property>
-                <property name="orientation">vertical</property>
-                <property name="icon_size">2</property>
-                <property name="stack">stack1</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkBox">
+              <object class="GtkStack" id="stackNoti">
                 <property name="width_request">540</property>
                 <property name="height_request">1020</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="orientation">vertical</property>
+                <property name="transition_type">crossfade</property>
                 <child>
                   <object class="GtkFixed">
-                    <property name="width_request">540</property>
-                    <property name="height_request">1020</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                   </object>
                   <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
+                    <property name="name">noti_notification</property>
+                    <property name="title" translatable="yes">Thông báo</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="title" translatable="yes">tab2</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="name">tab3</property>
+                    <property name="title" translatable="yes">tab3</property>
+                    <property name="position">2</property>
                   </packing>
                 </child>
               </object>
             </child>
             <child>
-              <object class="GtkStack" id="stack1">
-                <property name="width_request">360</property>
+              <object class="GtkStack" id="stackUtil">
+                <property name="width_request">540</property>
                 <property name="height_request">1020</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
@@ -133,11 +181,244 @@
                 </child>
               </object>
             </child>
+            <child>
+              <object class="GtkStack" id="stackFeed">
+                <property name="width_request">540</property>
+                <property name="height_request">1020</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="transition_type">crossfade</property>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="name">tab1</property>
+                    <property name="title" translatable="yes">tab1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="name">tab2</property>
+                    <property name="title" translatable="yes">tab2</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="name">tab3</property>
+                    <property name="title" translatable="yes">tab3</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="menuBar">
+                <property name="width_request">360</property>
+                <property name="height_request">1020</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="is_focus">True</property>
+                <property name="hexpand">False</property>
+                <property name="vexpand">False</property>
+                <property name="orientation">vertical</property>
+                <property name="baseline_position">top</property>
+                <child>
+                  <object class="GtkFixed" id="avatar">
+                    <property name="height_request">115</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="width_request">360</property>
+                        <property name="height_request">115</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <placeholder/>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="width_request">80</property>
+                        <property name="height_request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="margin_left">10</property>
+                        <property name="margin_right">10</property>
+                        <property name="margin_top">15</property>
+                        <property name="margin_bottom">15</property>
+                        <property name="border_width">5</property>
+                        <child>
+                          <object class="GtkImage">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="icon_name">go-home</property>
+                            <property name="icon_size">5</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="width_request">250</property>
+                        <property name="height_request">20</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_right">10</property>
+                        <property name="margin_top">10</property>
+                        <property name="label" translatable="yes">Nguyễn Hạnh</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Sans 14"/>
+                          <attribute name="weight" value="bold"/>
+                          <attribute name="scale" value="1"/>
+                          <attribute name="foreground" value="#2e2e34343636"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="x">100</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="width_request">250</property>
+                        <property name="height_request">15</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_right">10</property>
+                        <property name="margin_bottom">10</property>
+                        <property name="label" translatable="yes">hanh163200@gmail.com</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Latin Modern Mono Prop Light, Bold 12"/>
+                          <attribute name="weight" value="bold"/>
+                          <attribute name="scale" value="1"/>
+                          <attribute name="foreground" value="#2e2e34343636"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="x">100</property>
+                        <property name="y">30</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton">
+                        <property name="label" translatable="yes">Thông tin</property>
+                        <property name="width_request">160</property>
+                        <property name="height_request">40</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="image_position">top</property>
+                      </object>
+                      <packing>
+                        <property name="x">140</property>
+                        <property name="y">62</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFixed" id="notification">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="margin_top">5</property>
+                    <child>
+                      <object class="GtkStackSwitcher" id="sw_noti">
+                        <property name="width_request">360</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="receives_default">True</property>
+                        <property name="events">GDK_POINTER_MOTION_MASK | GDK_STRUCTURE_MASK</property>
+                        <property name="hexpand">False</property>
+                        <property name="vexpand">False</property>
+                        <property name="orientation">vertical</property>
+                        <property name="icon_size">15</property>
+                        <property name="stack">stackNoti</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFixed" id="utilities">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="margin_top">5</property>
+                    <child>
+                      <object class="GtkStackSwitcher" id="sw_util">
+                        <property name="width_request">360</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="events">GDK_STRUCTURE_MASK | GDK_PROPERTY_CHANGE_MASK</property>
+                        <property name="hexpand">False</property>
+                        <property name="vexpand">False</property>
+                        <property name="orientation">vertical</property>
+                        <property name="icon_size">2</property>
+                        <property name="stack">stackUtil</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkFixed" id="feedback">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="margin_top">5</property>
+                    <child>
+                      <object class="GtkStackSwitcher" id="sw_feed">
+                        <property name="width_request">360</property>
+                        <property name="height_request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="events">GDK_STRUCTURE_MASK | GDK_PROPERTY_CHANGE_MASK</property>
+                        <property name="hexpand">False</property>
+                        <property name="vexpand">False</property>
+                        <property name="orientation">vertical</property>
+                        <property name="icon_size">2</property>
+                        <property name="stack">stackFeed</property>
+                      </object>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">1</property>
+            <property name="position">2</property>
           </packing>
         </child>
       </object>

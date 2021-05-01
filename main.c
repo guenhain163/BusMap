@@ -4,10 +4,15 @@
 // Make them global
 GtkWidget  *window;
 GtkWidget  *fixed1;
-GtkWidget  *togglebutton;
-GtkWidget  *sw_page;
+GtkWidget  *buttonMenu;
+GtkWidget  *menuBar;
+GtkWidget  *sw_noti;
+GtkWidget  *sw_util;
+GtkWidget  *sw_feed;
 GtkWidget  *fixed2;
-GtkWidget  *stack1;
+GtkWidget  *stackNoti;
+GtkWidget  *stackUtil;
+GtkWidget  *stackFeed;
 GtkBuilder *builder;
 
 /* Main program */
@@ -25,15 +30,22 @@ int main(int argc, char *argv[])
 
     window = GTK_WIDGET(gtk_builder_get_object(builder, "window_main"));
     fixed1 = GTK_WIDGET(gtk_builder_get_object(builder, "fixed1"));
-    togglebutton = GTK_WIDGET(gtk_builder_get_object(builder, "togglebutton"));
-    sw_page = GTK_WIDGET(gtk_builder_get_object(builder, "sw_page"));
+    buttonMenu = GTK_WIDGET(gtk_builder_get_object(builder, "buttonMenu"));
+    menuBar = GTK_WIDGET(gtk_builder_get_object(builder, "menuBar"));
     fixed2 = GTK_WIDGET(gtk_builder_get_object(builder, "fixed2"));
-    stack1 = GTK_WIDGET(gtk_builder_get_object(builder, "stack1"));
+
+    sw_noti = GTK_WIDGET(gtk_builder_get_object(builder, "sw_noti"));
+    sw_util = GTK_WIDGET(gtk_builder_get_object(builder, "sw_util"));
+    sw_feed = GTK_WIDGET(gtk_builder_get_object(builder, "sw_feed"));
+
+    stackNoti = GTK_WIDGET(gtk_builder_get_object(builder, "stackNoti"));
+    stackUtil = GTK_WIDGET(gtk_builder_get_object(builder, "stackUtil"));
+    stackFeed = GTK_WIDGET(gtk_builder_get_object(builder, "stackFeed"));
 
     gtk_builder_connect_signals(builder, NULL);
     g_object_unref(builder);
 
-    gtk_widget_hide(sw_page); // Hide the sw_page
+    gtk_widget_hide(menuBar); // Hide the menuBar
     gtk_widget_show(window); // Show the window
 
     gtk_main(); //Run the event loop
@@ -45,6 +57,17 @@ int main(int argc, char *argv[])
     return EXIT_SUCCESS;
 }
 
+/* When the window is closed, the application exits.  */
+void on_window_main_destroy()
+{
+    gtk_main_quit();
+}
+
+void on_buttonMenu_clicked (GtkButton *buttonMenu)
+{
+    gtk_widget_show(menuBar);
+}
+
 void on_togglebuttonState_toggled (GtkToggleButton *togglebutton, GtkWidget *sw_page)
 {
 	gboolean button_state;
@@ -53,16 +76,10 @@ void on_togglebuttonState_toggled (GtkToggleButton *togglebutton, GtkWidget *sw_
 	
 	if (button_state) {
 		// button is active
-        gtk_widget_show(sw_page);
+        gtk_widget_show(menuBar);
 	}
 	else {
 		// button is inactive
-        gtk_widget_hide(sw_page);
+        gtk_widget_hide(menuBar);
 	}
-}
-
-/* When the window is closed, the application exits.  */
-void on_window_main_destroy()
-{
-    gtk_main_quit();
 }
