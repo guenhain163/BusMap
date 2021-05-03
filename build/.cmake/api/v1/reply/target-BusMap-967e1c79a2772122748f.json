@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "TuDien"
+			"path" : "BusMap"
 		}
 	],
 	"backtrace" : 1,
@@ -135,7 +135,7 @@
 			]
 		}
 	],
-	"id" : "TuDien::@6890427a1f51a3e7e1df",
+	"id" : "BusMap::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -195,8 +195,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "TuDien",
-	"nameOnDisk" : "TuDien",
+	"name" : "BusMap",
+	"nameOnDisk" : "BusMap",
 	"paths" : 
 	{
 		"build" : ".",

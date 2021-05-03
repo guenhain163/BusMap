@@ -6,7 +6,7 @@
 # It is included in the main 'build.ninja'.
 
 # =============================================================================
-# Project: TuDien
+# Project: BusMap
 # Configuration: 
 # =============================================================================
 # =============================================================================
@@ -22,18 +22,18 @@ rule CUSTOM_COMMAND
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__TuDien
+rule C_COMPILER__BusMap
   depfile = $DEP_FILE
   deps = gcc
-  command = /bin/x86_64-linux-gnu-gcc-9 $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  command = /usr/bin/cc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
   description = Building C object $out
 
 
 #############################################
 # Rule for linking C executable.
 
-rule C_EXECUTABLE_LINKER__TuDien
-  command = $PRE_LINK && /bin/x86_64-linux-gnu-gcc-9 $FLAGS  $LINK_FLAGS $in  -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+rule C_EXECUTABLE_LINKER__BusMap
+  command = $PRE_LINK && /usr/bin/cc $FLAGS  $LINK_FLAGS $in  -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT
 

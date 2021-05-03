@@ -1,0 +1,73 @@
+button {
+    background-image: none;
+}
+
+button:checked, button:hover {
+    box-shadow: none;
+}
+
+#topBar, #toggle_img, #bg_avatar {
+    background-color: #0FD874;
+}
+
+#buttonState {
+    background-color: #0FD874;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+}
+
+#toggle_img:hover {
+    background-color: #4ce498;
+    transition: all 0.2s ease-in-out;
+}
+
+#bt_avt_info {
+    border: 1px solid #fff;
+    background-color: #0FD874;
+    padding: 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+#bt_avt_info:active, #bt_avt_home:active {
+    background-color: #4ce498;
+    transition: all 0.2s ease-in-out;
+}
+
+#bt_avt_home {
+    border: 3px solid #fff;
+    background-color: #0FD874;
+    color: #fff;
+    padding: 0;
+    border-radius: 100%;
+}
+
+#bt_close {
+    background-color: black;
+    border: none;
+    border-radius: 0;
+    opacity: 0.3;
+}
+
+.toolbar_menu button:hover {
+    background-color: #dfdfdf;
+    border: none;
+    border-radius: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.toolbar_menu button {
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+}
+
+#menuBar, .menuBar_item, .toolbar_menu {
+    background-image: none;
+    background-color: #fff;
+    padding: 0;
+}

@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Value Computed by CMake
+BusMap_BINARY_DIR:STATIC=/home/mg/Desktop/CAdv
+
+//Value Computed by CMake
+BusMap_SOURCE_DIR:STATIC=/home/mg/Desktop/CAdv
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -145,7 +151,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=TuDien
+CMAKE_PROJECT_NAME:STATIC=BusMap
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1.0

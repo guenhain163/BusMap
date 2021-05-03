@@ -1,3 +1,3 @@
-/home/mg/Desktop/CAdv/CMakeFiles/rebuild_cache.dir
 /home/mg/Desktop/CAdv/CMakeFiles/edit_cache.dir
-/home/mg/Desktop/CAdv/CMakeFiles/TuDien.dir
+/home/mg/Desktop/CAdv/CMakeFiles/rebuild_cache.dir
+/home/mg/Desktop/CAdv/CMakeFiles/BusMap.dir

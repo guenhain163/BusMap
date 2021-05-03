@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/mg/Desktop/CAdv
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TuDien
+# Target rules for targets named BusMap
 
 # Build rule for target.
-TuDien: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TuDien
-.PHONY : TuDien
+BusMap: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BusMap
+.PHONY : BusMap
 
 # fast build rule for target.
-TuDien/fast:
-	$(MAKE) -f CMakeFiles/TuDien.dir/build.make CMakeFiles/TuDien.dir/build
-.PHONY : TuDien/fast
+BusMap/fast:
+	$(MAKE) -f CMakeFiles/BusMap.dir/build.make CMakeFiles/BusMap.dir/build
+.PHONY : BusMap/fast
 
 main.o: main.c.o
 
@@ -129,7 +129,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/TuDien.dir/build.make CMakeFiles/TuDien.dir/main.c.o
+	$(MAKE) -f CMakeFiles/BusMap.dir/build.make CMakeFiles/BusMap.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -138,7 +138,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/TuDien.dir/build.make CMakeFiles/TuDien.dir/main.c.i
+	$(MAKE) -f CMakeFiles/BusMap.dir/build.make CMakeFiles/BusMap.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -147,7 +147,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/TuDien.dir/build.make CMakeFiles/TuDien.dir/main.c.s
+	$(MAKE) -f CMakeFiles/BusMap.dir/build.make CMakeFiles/BusMap.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -156,9 +156,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... TuDien"
+	@echo "... rebuild_cache"
+	@echo "... BusMap"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -175,3 +175,4 @@ help:
 cmake_check_build_system:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
+
