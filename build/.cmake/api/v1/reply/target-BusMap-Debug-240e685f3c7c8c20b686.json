@@ -42,7 +42,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "  -pthread -rdynamic"
+					"fragment" : "-g   -pthread -rdynamic"
 				}
 			],
 			"includes" : 
@@ -141,6 +141,10 @@
 		"commandFragments" : 
 		[
 			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
 				"fragment" : "-rdynamic",
 				"role" : "flags"
 			},
@@ -190,6 +194,10 @@
 			},
 			{
 				"fragment" : "-lglib-2.0",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lsqlite3",
 				"role" : "libraries"
 			}
 		],

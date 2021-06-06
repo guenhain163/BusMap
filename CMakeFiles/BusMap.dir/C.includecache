@@ -9,4 +9,12 @@
 /home/mg/Desktop/CAdv/main.c
 gtk-3.0/gtk/gtk.h
 -
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+sqlite3.h
+/home/mg/Desktop/CAdv/sqlite3.h
 

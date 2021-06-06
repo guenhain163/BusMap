@@ -18,7 +18,7 @@
 					]
 				}
 			],
-			"name" : "",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -38,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "BusMap::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-BusMap-967e1c79a2772122748f.json",
+					"jsonFile" : "target-BusMap-Debug-240e685f3c7c8c20b686.json",
 					"name" : "BusMap",
 					"projectIndex" : 0
 				}

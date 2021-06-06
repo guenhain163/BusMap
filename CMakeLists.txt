@@ -12,4 +12,4 @@ add_definitions(${GTK3_CFLAGS_OTHER} -rdynamic)
 message(STATUS "Include: ${GTK3_INCLUDE_DIRS}\n LIB_DIR: ${GTK3_LIBRARY_DIRS} \n CFLAGS_OTHERS: ${GTK3_CFLAGS_OTHER} \n LIBS: ${GTK3_LIBRARIES}")
 
 add_executable(BusMap main.c)
-target_link_libraries(BusMap ${GTK3_LIBRARIES})
+target_link_libraries(BusMap ${GTK3_LIBRARIES} sqlite3)
